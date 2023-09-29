@@ -23,7 +23,7 @@ public class ApplicationHooks {
 	@BeforeAll(order=0)
 	public static void getProperty()
 	{
-		LoggerLoad.info("Loading Config Properties ");
+		LoggerLoad.info("*************************Loading Config Properties************************ ");
 		configReader = new ConfigReader();
 		prop = configReader.init_prop();
 	}
@@ -31,7 +31,7 @@ public class ApplicationHooks {
 	public  static void launchBrowser()
 	{
 		String browserName = prop.getProperty("browser");
-		LoggerLoad.info("Initializing the DriverFactory class ");
+		LoggerLoad.info("***************************Initializing the DriverFactory class*********************** ");
 		driverFactory = new DriverFactory();
 		driver = driverFactory.init_driver(browserName);
 	}
@@ -39,7 +39,7 @@ public class ApplicationHooks {
 	@AfterAll(order=1)
 	public  static void quitBrowser() {
 		
-		LoggerLoad.info("Closing Browser");
+		LoggerLoad.info("*********************Closing Browser***********************");
 		driver.quit();
 	}
 	
