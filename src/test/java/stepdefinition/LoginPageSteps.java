@@ -4,6 +4,7 @@ import org.junit.Assert;
 
 import com.pages.LoginPage;
 import com.qa.factory.DriverFactory;
+import com.qa.util.JiraPolicy;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,7 +21,7 @@ public class LoginPageSteps {
 		DriverFactory.getDriver().get("https://dsportalapp.herokuapp.com/login");
 		
 	}
-
+	@JiraPolicy(logTicketReady=true)
 	@When("user gets the title of the page")
 	public void user_gets_the_title_of_the_page() {
 	    

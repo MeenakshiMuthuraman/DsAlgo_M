@@ -3,7 +3,6 @@ package com.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.qa.util.Constants;
 
 public class QueuePage {
 	
@@ -13,8 +12,6 @@ public class QueuePage {
 	private By implementationCollections = By.xpath("//a[@href='implementation-collections']");
 	private By implementationArray = By.linkText("Implementation using array");
 	private By queueOp = By.linkText("Queue Operations");
-	private By tryherelink = By.linkText("Try here>>>");
-//	private By tryeditor = By.xpath("//div[@class='input'] ");
 
 
 	public QueuePage(WebDriver driver)
@@ -41,14 +38,6 @@ public class QueuePage {
 		}
 		else
 			System.out.println("Page cannot be found-queue");
-	}
-	public void Page_tryEditor(String pageName)
-	{
-	
-		driver.get(Constants.queueUrl);
-		navigatethru_QueuePage(pageName);
-		driver.findElement(tryherelink).click();
-
 	}
 
 }

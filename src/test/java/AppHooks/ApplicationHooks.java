@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.qa.factory.DriverFactory;
 import com.qa.util.ConfigReader;
+import com.qa.util.JiraPolicy;
 import com.qa.util.LoggerLoad;
 
 import io.cucumber.java.AfterAll;
@@ -20,6 +21,7 @@ public class ApplicationHooks {
 	private static ConfigReader configReader;
 	static Properties prop;
 	
+	@JiraPolicy(logTicketReady=true)
 	@BeforeAll(order=0)
 	public static void getProperty()
 	{
@@ -27,6 +29,7 @@ public class ApplicationHooks {
 		configReader = new ConfigReader();
 		prop = configReader.init_prop();
 	}
+	@JiraPolicy(logTicketReady=true)
 	@BeforeAll(order=1)
 	public  static void launchBrowser()
 	{
@@ -35,7 +38,7 @@ public class ApplicationHooks {
 		driverFactory = new DriverFactory();
 		driver = driverFactory.init_driver(browserName);
 	}
-	
+	@JiraPolicy(logTicketReady=true)
 	@AfterAll(order=1)
 	public  static void quitBrowser() {
 		
