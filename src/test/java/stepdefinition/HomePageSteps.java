@@ -7,7 +7,7 @@ import com.pages.HomePage;
 //import com.pages.LoginPage;
 import com.qa.factory.DriverFactory;
 import com.qa.util.Constants;
-import com.qa.util.JiraPolicy;
+//import com.qa.util.JiraPolicy;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -37,7 +37,7 @@ public class HomePageSteps {
 		home.startHomePage(page_name);
 		System.out.println("Page Name is:"+page_name);
 	}
-	@JiraPolicy(logTicketReady=true)
+//	@JiraPolicy(logTicketReady=true)
 	@Then ("check the title of the page {string}")
 	public void check_the_title_of_the_page(String expectedTitleName) {
 		
